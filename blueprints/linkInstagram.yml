@@ -1,0 +1,7 @@
+type: info
+theme: negative
+label: Important information regarding the instagram link
+text: |
+    Instagram link: **{{site.instagramAuth}}** (0 is inactive, 1 is active)
+    Click on the link below to (re)create the instagram link.
+    [Link instagram with this website](https://www.instagram.com/oauth/authorize?client_id={{kirby.option('genxbe.instagram.client_id')}}&redirect_uri={{kirby.option('genxbe.instagram.redirect_uri')}}&response_type=code&scope=user_profile,user_media)
