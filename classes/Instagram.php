@@ -72,7 +72,7 @@ class Instagram
         $token = $this->token;
         $db = $this->getDb();
 
-        $path = kirby()->root('assets').DS.option('genxbe.instagram.assetFolder').DS.option('genxbe.instagram.media');
+        $path = kirby()->root('assets').DS.option('genxbe.instagram.assetFolder').DS.option('genxbe.instagram.mediaFolder');
 
         if(!file_exists($path))
         {

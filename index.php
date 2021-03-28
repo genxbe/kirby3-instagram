@@ -4,12 +4,12 @@
 
 Kirby::plugin('genxbe/instagram', [
     'options' => [
-        'assetFolder' => 'instagram',
-        'db' => 'instagram.json',
-        'media' => 'media/',
         'client_id' => '',
         'client_secret' => '',
         'redirect_uri' => u('axi/instagram'),
+        'assetFolder' => 'instagram',
+        'mediaFolder' => 'media',
+        'db' => 'instagram.json',
     ],
     'blueprints' => [
         'linkInstagram' => __DIR__.'/blueprints/linkInstagram.yml',
