@@ -193,7 +193,7 @@ class Instagram
 
         if($this->dateDifference(date('Y-m-d'), $this->tokenRefreshed) > 50)
         {
-            self::refreshToken();
+            $this->refreshToken();
         }
     }
 
