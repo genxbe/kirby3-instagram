@@ -77,6 +77,17 @@ Since we work with collections you can also use fieldMethods like `limit`, `filt
 <?php endif; ?>
 ```
 
+Fields that can be used in the $media array based on the example above.
+
+* $media['id']
+* $media['timestamp']
+* $media['media_type']
+* $media['media_url']
+* $media['caption']
+* $media['permalink']
+* $media['username']
+* $media['thumbnail_url']
+
 ## Plugin installation
 
 ### Download
