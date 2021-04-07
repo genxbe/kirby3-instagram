@@ -14,7 +14,6 @@ return [
     'genxbe.instagram' => [
         'client_id' => '',
         'client_secret' => '',
-        'redirect_uri' => u('axi/instagram'),
         'assetFolder' => 'instagram',
         'mediaFolder' => 'media',
         'db' => 'instagram.json',
