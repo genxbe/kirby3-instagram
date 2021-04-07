@@ -26,7 +26,7 @@ class Instagram
 
         $this->db = kirby()->root('assets').DS.option('genxbe.instagram.assetFolder').DS.option('genxbe.instagram.db');
         $this->token = site()->instagramToken();
-        $this->tokenRefreshed = page('sitesettings')->instagramTokenRefreshed();
+        $this->tokenRefreshed = site()->instagramTokenRefreshed();
     }
 
     public function feed()
@@ -57,7 +57,7 @@ class Instagram
                 $data = \Remote::request('https://api.instagram.com/oauth/access_token', $options);
 
                 $access_token = $data->json()['access_token'];
-                $client_secret = option('genx.blocks-instagram.client_secret');
+                $client_secret = option('genxbe.instagram.client_secret');
 
                 $data = \Remote::get("https://graph.instagram.com/access_token?grant_type=ig_exchange_token&client_secret={$client_secret}&access_token={$access_token}");
 
@@ -69,7 +69,10 @@ class Instagram
                     'instagramTokenRefreshed' => date('Y-m-d'),
                 ]);
 
-                exec("php {__DIR__} fetch.php > /dev/null &");
+                $root = kirby()->root();
+                $dir = dirname(__DIR__);
+
+                exec("cd {$root} && php {$dir}/fetch.php > /dev/null &");
             }
         }
         catch(\Exception $e)
