@@ -112,7 +112,7 @@ Detailed instructions on: https://elfsight.com/blog/2016/05/how-to-get-instagram
 
 * Create a Facebook app
 * Setup Instagram Basic display
-  * Important, your website oauth url must be added as a valid OAuth redirect URI!
+  * Important, your website OAuth url must be added as a valid OAuth redirect URI!
   * All other url's (deauthorize & data deletion) don't really matter, you can enter your own website there.
   * Don't request an app review
 
