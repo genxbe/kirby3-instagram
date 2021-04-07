@@ -97,9 +97,29 @@ composer require genxbe/kirby3-instagram
 
 ## Facebook app configuration
 
+Detailed instructions on: https://elfsight.com/blog/2016/05/how-to-get-instagram-access-token/ (step 1-2)
+
+* Create a Facebook app
+* Setup Instagram Basic display
+  * Important, your website oauth url must be added as a valid OAuth redirect URI!
+  * All other url's (deauthorize & data deletion) don't really matter, you can enter your own website there.
+  * Don't request an app review
+
 ## Adding test users
 
+Detailed instructions on: https://elfsight.com/blog/2016/05/how-to-get-instagram-access-token/ (step 3)
+
+* Add the feed you want to show as instagram test user
+* Make sure your test users accepts the test invitation
+  * More info on https://www.notion.so/genxbe/Link-instagram-with-your-website-9aa72c4961074cb4b4f9b5d1e6322e36
+
+## Authenticate the instagram user and request User token
+
+Follow instructions on https://www.notion.so/genxbe/Link-instagram-with-your-website-9aa72c4961074cb4b4f9b5d1e6322e36
+
 ## Usage on multiple websites
+
+You can use your 1 app for multiple sites by adding multiple OAuth redirect URI, please do keep your rate limit in mind. You can always create multiple facebook apps do divide the rate limit.
 
 ## License
 
