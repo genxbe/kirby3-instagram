@@ -1,8 +1,8 @@
 {
-    "name": "genxbe/kirby3-ray",
+    "name": "genxbe/kirby3-instagram",
     "type": "kirby-plugin",
     "license": "MIT",
-    "description": "Helper tool that enables ray on all the extendable methods.",
+    "description": "Kirby3 plugin to fetch instagram photos from your profile.",
     "authors": [
         {
             "name": "Sam Serrien",
