@@ -8,6 +8,9 @@ This plugin uses the **basic user access token** which you can generate for all 
 
 ## Options
 
+Required are the **`client_id`** (Instagram App ID) and **`client_secret`** (Instagram App Secret).
+All other options are optional.
+
 ```php
 # site/config/config.php
 return [
@@ -31,9 +34,15 @@ return [
 
     * You can add multiple website and thus use 1 app for all of your websites
 
+    * Format of the url you need to add is `https://yoursite.com/axi/instagram`
+
 * Add the instagram account you want to use to the test users and ask them to accept the invite (instructions below)
 
 * Ask your user to enable the instagram link on the website, when this process is completed a first time fetch will already be done.
+
+* After the user has linked his Instagram you can start fetching via `php site/plugins/kirby3-instagram/fetch.php`
+
+* If you want to have regular updates you need to schedule this command via the cron. I would advise to do this every 30 or 60 minutes so you don't overload your API rate limit. (More info on https://developers.facebook.com/docs/graph-api/overview/rate-limiting/#platform-rate-limits)
 
 ### Examples
 
@@ -87,6 +96,22 @@ Fields that can be used in the $media array based on the example above.
 * `$media['permalink']`
 * `$media['username']`
 * `$media['thumbnail_url']`
+
+#### Setup cron
+
+Every 30 minutes
+
+```
+*/30 * * * * cd /home/website/website.com/ && php site/plugins/kirby3-instagram
+```
+
+Every hour
+
+```
+0 * * * * cd /home/website/website.com/ && php site/plugins/kirby3-instagram
+```
+
+Faster is possible but do keep your rate limits in mind! (More info on https://developers.facebook.com/docs/graph-api/overview/rate-limiting/#platform-rate-limits)
 
 ## Plugin installation
 
