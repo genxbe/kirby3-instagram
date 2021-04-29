@@ -102,13 +102,13 @@ Fields that can be used in the $media array based on the example above.
 Every 30 minutes
 
 ```
-*/30 * * * * cd /home/website/website.com/ && php site/plugins/kirby3-instagram
+*/30 * * * * cd /home/website/website.com/ && php site/plugins/kirby3-instagram/fetch.php
 ```
 
 Every hour
 
 ```
-0 * * * * cd /home/website/website.com/ && php site/plugins/kirby3-instagram
+0 * * * * cd /home/website/website.com/ && php site/plugins/kirby3-instagram/fetch.php
 ```
 
 Faster is possible but do keep your rate limits in mind! (More info on https://developers.facebook.com/docs/graph-api/overview/rate-limiting/#platform-rate-limits)
