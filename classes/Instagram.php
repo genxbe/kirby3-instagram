@@ -83,7 +83,7 @@ class Instagram
             ]);
         }
 
-        go(site()->panelUrl(), 303);
+        go(site()->panel()->url(), 303);
     }
 
     public function refreshToken()
