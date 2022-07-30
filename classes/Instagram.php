@@ -185,7 +185,7 @@ class Instagram
         {
             if(!$newDb->findBy('id', basename($file, '.jpg')))
             {
-                unlink($path.$file);
+                unlink($path.DS.$file);
             }
         }
 
