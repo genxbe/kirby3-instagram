@@ -2,6 +2,7 @@
     "name": "genxbe/kirby3-instagram",
     "type": "kirby-plugin",
     "license": "MIT",
+    "version": "1.0.9",
     "description": "Kirby3 plugin to fetch instagram photos from your profile.",
     "authors": [
         {
