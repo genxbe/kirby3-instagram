@@ -151,7 +151,7 @@ Detailed instructions on: https://elfsight.com/blog/2016/05/how-to-get-instagram
 
 ## Authenticate the instagram user and request User token
 
-Follow instructions on https://genxbe.notion.site/Link-instagram-with-your-website-9aa72c4961074cb4b4f9b5d1e6322e36
+Follow instructions on https://xdocs.notion.site/Link-instagram-with-your-website-9aa72c4961074cb4b4f9b5d1e6322e36
 
 ## Usage on multiple websites
 
