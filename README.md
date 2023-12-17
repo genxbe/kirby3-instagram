@@ -147,7 +147,7 @@ Detailed instructions on: https://elfsight.com/blog/2016/05/how-to-get-instagram
 
 * Add the feed you want to show as instagram test user
 * Make sure your test users accepts the test invitation
-  * More info on https://genxbe.notion.site/Link-instagram-with-your-website-9aa72c4961074cb4b4f9b5d1e6322e36
+  * More info on https://xdocs.notion.site/Link-instagram-with-your-website-9aa72c4961074cb4b4f9b5d1e6322e36
 
 ## Authenticate the instagram user and request User token
 
