@@ -14,9 +14,9 @@ class Instagram
             mkdir(kirby()->root('assets'));
         }
 
-        if(!file_exists(kirby()->root('assets').DS.option('genxbe.instagram.assetFolder')))
+        if(!file_exists(kirby()->root('assets').DIRECTORY_SEPARATOR.option('genxbe.instagram.assetFolder')))
         {
-            mkdir(kirby()->root('assets').DS.option('genxbe.instagram.assetFolder'));
+            mkdir(kirby()->root('assets').DIRECTORY_SEPARATOR.option('genxbe.instagram.assetFolder'));
         }
 
         if(empty(option('genxbe.instagram.db')))
@@ -24,7 +24,7 @@ class Instagram
             throw new \Exception('Database path is required.');
         }
 
-        $this->db = kirby()->root('assets').DS.option('genxbe.instagram.assetFolder').DS.option('genxbe.instagram.db');
+        $this->db = kirby()->root('assets').DIRECTORY_SEPARATOR.option('genxbe.instagram.assetFolder').DIRECTORY_SEPARATOR.option('genxbe.instagram.db');
         $this->token = site()->instagramToken();
         $this->tokenRefreshed = site()->instagramTokenRefreshed();
     }
@@ -130,14 +130,14 @@ class Instagram
         $token = $this->token;
         $db = $this->getDb();
 
-        $path = kirby()->root('assets').DS.option('genxbe.instagram.assetFolder').DS.option('genxbe.instagram.mediaFolder');
+        $path = kirby()->root('assets').DIRECTORY_SEPARATOR.option('genxbe.instagram.assetFolder').DIRECTORY_SEPARATOR.option('genxbe.instagram.mediaFolder');
 
         if(!file_exists($path))
         {
             mkdir($path);
         }
 
-        $mediaList = \Remote::get("https://graph.instagram.com/me?fields=media&access_token={$token}");
+        $mediaList = \Remote::get("https://graph.instagram.com/me?fielDIRECTORY_SEPARATOR=media&access_token={$token}");
 
         if($mediaList->code() !== 200)
         {
@@ -148,19 +148,19 @@ class Instagram
 
         foreach($data['media']['data'] as $media)
         {
-            if(!file_exists($path.DS.$media['id'].'.jpg'))
+            if(!file_exists($path.DIRECTORY_SEPARATOR.$media['id'].'.jpg'))
             {
-                $media = \Remote::get("https://graph.instagram.com/{$media['id']}?fields=caption,media_url,media_type,thumbnail_url,timestamp,permalink,username&access_token={$token}");
+                $media = \Remote::get("https://graph.instagram.com/{$media['id']}?fielDIRECTORY_SEPARATOR=caption,media_url,media_type,thumbnail_url,timestamp,permalink,username&access_token={$token}");
                 $item = $media->json();
 
                 if(in_array($item['media_type'], ['IMAGE', 'CAROUSEL_ALBUM']))
                 {
-                    file_put_contents($path.DS.$item['id'].'.jpg', file_get_contents($item['media_url']));
+                    file_put_contents($path.DIRECTORY_SEPARATOR.$item['id'].'.jpg', file_get_contents($item['media_url']));
                 }
 
                 if($item['media_type'] == 'VIDEO')
                 {
-                    file_put_contents($path.DS.$item['id'].'.jpg', file_get_contents($item['thumbnail_url']));
+                    file_put_contents($path.DIRECTORY_SEPARATOR.$item['id'].'.jpg', file_get_contents($item['thumbnail_url']));
                 }
 
                 if(!$db->findBy('id', $item['id']))
@@ -185,7 +185,7 @@ class Instagram
         {
             if(!$newDb->findBy('id', basename($file, '.jpg')))
             {
-                unlink($path.DS.$file);
+                unlink($path.DIRECTORY_SEPARATOR.$file);
             }
         }
 
