@@ -137,7 +137,7 @@ class Instagram
             mkdir($path);
         }
 
-        $mediaList = \Remote::get("https://graph.instagram.com/me?fielDIRECTORY_SEPARATOR=media&access_token={$token}");
+        $mediaList = \Remote::get("https://graph.instagram.com/me?fields=media&access_token={$token}");
 
         if($mediaList->code() !== 200)
         {
@@ -150,7 +150,7 @@ class Instagram
         {
             if(!file_exists($path.DIRECTORY_SEPARATOR.$media['id'].'.jpg'))
             {
-                $media = \Remote::get("https://graph.instagram.com/{$media['id']}?fielDIRECTORY_SEPARATOR=caption,media_url,media_type,thumbnail_url,timestamp,permalink,username&access_token={$token}");
+                $media = \Remote::get("https://graph.instagram.com/{$media['id']}?fields=caption,media_url,media_type,thumbnail_url,timestamp,permalink,username&access_token={$token}");
                 $item = $media->json();
 
                 if(in_array($item['media_type'], ['IMAGE', 'CAROUSEL_ALBUM']))
