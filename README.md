@@ -1,3 +1,8 @@
+# IMPORTANT NOTICE
+
+This plugin won't work anymore starting from 04/12/2024. Because of the changes on the basic display API. (more info: https://developers.facebook.com/blog/post/2024/09/04/update-on-instagram-basic-display-api/)
+Keep an eye on https://plugins.andkindness.com/socialstar for a new Kirby instagram plugin.
+
 # Kirby3 Instagram feed
 
 Fetch instagram photos without the need for app aproval. This plugin will download the photos and/or video thumbnails to local storage. All media will be stored in a json file.
